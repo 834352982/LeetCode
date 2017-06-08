@@ -5,7 +5,10 @@ import com.MrL.solution.Solution;
 public class Main {
 	public static void main(String[] args) {
 		Solution solution = new Solution();
-		String string = "pwwkew";
-		System.out.println(solution.lengthOfLongestSubstring(string));
+		int nums[] = {3, 3};
+		int num[] = solution.twoSum(nums, 6);
+		System.out.println(num[0]);
+		System.out.println(num[1]);
+		//System.out.println(solution.lengthOfLongestSubstring("abcabcc"));
 	}
 }
