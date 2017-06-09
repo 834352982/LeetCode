@@ -1,5 +1,6 @@
 package com.MrL.solution;
 
+import com.MrL.util.Interval;
 import com.MrL.util.ListNode;
 
 import java.util.*;
@@ -74,6 +75,43 @@ public class Solution {
  		return maxSubLen;
  	}
 	/*
-	 * 4.取两个有序列表的中间值
+	 * 4.取两个有序列表的中间值 O(m + n)
+	 * 有待改进，最优解O(log(m + n))
 	 */
+	public double findMedianSortedArrays(int[] nums1, int[] nums2){
+		int len1 = nums1.length, len2 = nums2.length;
+		int len = len1 + len2;
+		int[] nums = new int[len];
+		int i = 0, j = 0, k = 0;
+		while(i < len1 && j < len2){
+			if(nums1[i] <= nums2[j]) {
+				nums[k ++] = nums1[i ++];
+			}else{
+				nums[k ++] = nums2[j ++];
+			}
+		}
+		while(i < len1){
+			nums[k ++] = nums1[i ++];
+		}
+		while(j < len2){
+			nums[k ++] = nums2[j ++];
+		}
+		if(len % 2 == 0){
+			return (nums[len / 2 - 1] + nums[len / 2]) / 2.0;
+		}else {
+			return nums[len / 2];
+		}
+	}
+
+	/*
+	 * Sort
+	 */
+
+	/*
+	 * 1.重复区间合并
+	 */
+	public  List<Interval> merge(List<Interval> intervals){
+		List<Interval> interval = new ArrayList<Interval>();
+		return interval;
+	}
  }

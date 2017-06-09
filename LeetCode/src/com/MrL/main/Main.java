@@ -2,13 +2,13 @@ package com.MrL.main;
 
 import com.MrL.solution.Solution;
 
+import java.util.Random;
+
 public class Main {
 	public static void main(String[] args) {
 		Solution solution = new Solution();
-		int nums[] = {3, 3};
-		int num[] = solution.twoSum(nums, 6);
-		System.out.println(num[0]);
-		System.out.println(num[1]);
-		//System.out.println(solution.lengthOfLongestSubstring("abcabcc"));
+		int[] nums1 = {1, 2};
+		int[] nums2 = {3, 4};
+		System.out.println(solution.findMedianSortedArrays(nums1, nums2));
 	}
 }
