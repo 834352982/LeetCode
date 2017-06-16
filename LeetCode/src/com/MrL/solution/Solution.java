@@ -1,5 +1,6 @@
 package com.MrL.solution;
 
+import com.MrL.util.Interval;
 import com.MrL.util.ListNode;
 
 import java.util.*;
@@ -55,7 +56,8 @@ public class Solution {
  		return maxSubLen;
  	}
 	/*
-	 * 4.取两个有序列表的中间值
+	 * 4.取两个有序列表的中间值 O(m + n)
+	 * 有待改进，最优解O(log(m + n))
 	 */
 
 	/*
@@ -220,30 +222,30 @@ public class Solution {
 	 * 合并两个有序列表
 	 */
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-		if(l1 == null) return l2;
-		if(l2 == null) return l1;
+		if (l1 == null) return l2;
+		if (l2 == null) return l1;
 		ListNode head = new ListNode(0);
 		ListNode ln1 = l1, ln2 = l2, cur = head, pNew = null;
-		while(ln1 != null && ln2 != null){
-			if(ln1.val <= ln2.val){
+		while (ln1 != null && ln2 != null) {
+			if (ln1.val <= ln2.val) {
 				pNew = new ListNode(ln1.val);
 				cur.next = pNew;
 				cur = cur.next;
 				ln1 = ln1.next;
-			}else{
+			} else {
 				pNew = new ListNode(ln2.val);
 				cur.next = pNew;
 				cur = cur.next;
 				ln2 = ln2.next;
 			}
 		}
-		while(ln1 != null){
+		while (ln1 != null) {
 			pNew = new ListNode(ln1.val);
 			cur.next = pNew;
 			cur = cur.next;
 			ln1 = ln1.next;
 		}
-		while(ln2 != null){
+		while (ln2 != null) {
 			pNew = new ListNode(ln2.val);
 			cur.next = pNew;
 			cur = cur.next;
